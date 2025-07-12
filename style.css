@@ -1,14 +1,19 @@
+/* ------------------- Global Reset ------------------- */
+/* Applies to all elements to remove default spacing */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background:#000000;
+    background: #000000;
     font-family: 'Orbitron', sans-serif;
-    overflow-x: hidden
+    overflow-x: hidden;
 }
-/* fonts */
+
+/* ------------------- Fonts ------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Orbitron:wght@400..900&display=swap');
-/* background */
+
+/* ------------------- Background Video ------------------- */
+/* Positions and scales the video container */
 .back-vedio {
     position: absolute;
     top: 0;
@@ -19,25 +24,29 @@
     z-index: 1;
     aspect-ratio: 16/9;
 }
+
+/* Styles the actual video element */
 .video {
     position: absolute;
     width: 100%;
     height: 100%;
 }
-/* nvigation */
+
+/* ------------------- Navigation Bar ------------------- */
+/* Styles the nav container and sets its position */
 ul {
     position: absolute;
-    top:10px;
-    right:20px;
+    top: 10px;
+    right: 20px;
     list-style: none;
     background: #525252;
     border-radius: 10px;
     padding: 10px;
     z-index: 2;
     overflow: hidden;
-
-
 }
+
+/* Individual navigation items */
 ul .list {
     text-align: right;
     font-size: 20px;
@@ -45,13 +54,16 @@ ul .list {
     padding: 12px;
     background: transparent;
 }
+
+/* Link styling inside nav */
 ul .list a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     font-weight: 600;
     background: transparent;
 }
-/* navbar styling */
+
+/* Highlight styling for home button */
 #home::before {
     content: "";
     position: absolute;
@@ -67,17 +79,21 @@ ul .list a {
     border: 5px;
     transition: background-position 0.5s ease;
 }
-/* separator */
+
+/* ------------------- Left Panel ------------------- */
+/* Container for form and logo */
 .leftcontainer {
     display: flex;
     position: absolute;
     left: 0px;
-    height:100vh;
+    height: 100vh;
     width: 35%;
     background: #ffffff00;
     z-index: 2;
 }
-/* logo2 */
+
+/* ------------------- Logo Styling ------------------- */
+/* Circular logo inside left container */
 .jpjlogo {
     height: 70px;
     width: 70px;
@@ -89,7 +105,9 @@ ul .list a {
     left: 40%;
     z-index: 2;
 }
-/* form */
+
+/* ------------------- Form ------------------- */
+/* Styles the form container */
 form {
     position: relative;
     display: flex;
@@ -98,13 +116,16 @@ form {
     align-items: center;
     height: 100vh;
     width: 100%;
-    background:conic-gradient(from 180deg at 50% 50%, #000000, #ffffff) ;
+    background: conic-gradient(from 180deg at 50% 50%, #000000, #ffffff);
     filter: blur(1);
-    border: 2px transparent ;
+    border: 2px transparent;
     border-top-right-radius: 150px;
     border-bottom-right-radius: 150px;
     z-index: 1;
 }
+
+/* ------------------- Labels ------------------- */
+/* Label for name and email */
 .lbl-primary {
     background: transparent;
     color: #ffffff;
@@ -116,7 +137,8 @@ form {
     left: -55px;
     width: 180px;
 }
-/* fixing problem with password lable */
+
+/* Label for password (smaller font) */
 .lbl1-primary {
     background: transparent;
     color: #ffffff;
@@ -126,8 +148,11 @@ form {
     margin-bottom: 10px;
     text-align: left;
     left: -45px;
-    width:200px
+    width: 200px;
 }
+
+/* ------------------- Input Fields ------------------- */
+/* Common input style */
 .inp-primary {
     width: 300px;
     height: 40px;
@@ -138,13 +163,16 @@ form {
     background: #ffffff;
     margin-bottom: 20px;
 }
-/* input hover effect */
+
+/* Input hover effect */
 .inp-primary:hover {
     border: 1px;
     border-style: dashed;
     filter: blur(1.5px);
 }
-/* button styling */
+
+/* ------------------- Button ------------------- */
+/* Base login button styling */
 .btn-primary {
     width: 300px;
     height: 40px;
@@ -153,8 +181,10 @@ form {
     border-bottom-right-radius: 30px;
     color: #ffffff;
     background: #000000;
-        background-size: 600%;
+    background-size: 600%;
 }
+
+/* Glowing effect behind button */
 .btn-primary::before {
     content: "";
     position: absolute;
@@ -162,29 +192,24 @@ form {
     left: 13vh;
     height: 50px;
     width: 310px;
-    background:conic-gradient(from 45deg at 50% 50%, #000000, #ffffff) ;
+    background: conic-gradient(from 45deg at 50% 50%, #000000, #ffffff);
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
     z-index: -1;
     filter: blur(5px);
     animation: glowing 20s infinite linear;
-    
-/* animation */
-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
+
+/* Button animation keyframes */
 @keyframes glowing {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        baackground-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-    
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
-/* right container */
+
+/* ------------------- Right Panel ------------------- */
+/* Container with gradient-text headline */
 .rightcontainer {
     position: absolute;
     top: 90px;
@@ -195,30 +220,26 @@ transition: all 0.5s ease;
     height: 100px;
     width: 1000px;
     color: transparent;
-    background: linear-gradient(to right,#cf02d3,#6839f5,#2f68fa,#6a39fd,#ee1ff1);
+    background: linear-gradient(to right, #cf02d3, #6839f5, #2f68fa, #6a39fd, #ee1ff1);
     background-clip: text;
 }
- /* .rightcontainer h1 {
-    font-size: 3rem;
-    font-weight: 9900;
-    text-align: center;
-    -webkit-background-clip: text;
-    background: transparent;
-    
- } */
- h1 {
+
+/* Main heading style */
+h1 {
     font-size: 3rem;
     font-weight: 900;
     text-align: center;
     -webkit-background-clip: text;
     background: transparent;
- }
- h4 {
-    z-index:  9;
-    background: conic-gradient(from 1deg at 50% 50%, #ff0000, #0602ff,#ffae00);
+}
+
+/* Subheading paragraph */
+h4 {
+    z-index: 9;
+    background: conic-gradient(from 1deg at 50% 50%);
     position: absolute;
     top: 30%;
     left: 50%;
     width: 600px;
-    font-size: 1.5rem; 
- }
+    font-size: 1.5rem;
+}
